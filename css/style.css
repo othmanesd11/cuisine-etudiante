@@ -1,0 +1,754 @@
+/* ==========================================================================
+   CUISINE ÉTUDIANT — Feuille de style principale
+   Palette : vert foncé / jaune / rouge  |  Ton : « tu »  |  Responsive
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES & RESET
+   -------------------------------------------------------------------------- */
+:root {
+  /* Palette (identique au design d'origine : vert foncé, jaune, rouge) */
+  --vert-fonce:    #1B4332;   /* vert principal (en-tête, titres, footer) */
+  --vert-clair:    #2D6A4F;   /* vert secondaire (boutons, liens)         */
+  --vert-moyen:    #40916C;   /* vert d'accent                             */
+  --vert-fond:     #EAF4EC;   /* fond clair teinté vert (sections)         */
+  --vert-tres-fond:#F4FAF5;   /* fond très clair (arrière-plan général)    */
+  --jaune:         #FFC300;   /* jaune (badges, CTA, surlignages)          */
+  --jaune-fonce:   #E6A800;   /* jaune au survol                           */
+  --rouge:         #E63946;   /* rouge (petits accents, étiquettes prix)   */
+  --rouge-fonce:   #C1121F;   /* rouge au survol                          */
+  --encre:         #1D2A21;   /* texte principal (presque noir-vert)       */
+  --gris:          #5C6B60;   /* texte secondaire                          */
+  --blanc:         #FFFFFF;
+  --gris-fond:     #F4F1EA;   /* fond neutre des cartes                     */
+
+  /* Typographie */
+  --titre: "Poppins", "Segoe UI", Arial, sans-serif;
+  --texte: "Nunito Sans", "Segoe UI", Arial, sans-serif;
+
+  /* Formes & ombres */
+  --rayon: 18px;
+  --rayon--petit: 10px;
+  --ombre: 0 6px 20px rgba(27, 67, 50, 0.10);
+  --ombre--forte: 0 10px 30px rgba(27, 67, 50, 0.16);
+
+  /* Espacement */
+  --espace: 24px;
+  --conteneur: 1120px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--texte);
+  color: var(--encre);
+  background: var(--vert-tres-fond);
+  line-height: 1.7;
+  font-size: 1.06rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main { flex: 1 0 auto; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: var(--titre);
+  color: var(--vert-fonce);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+h3 { font-size: 1.15rem; }
+
+a { color: var(--vert-clair); text-decoration: none; font-weight: 600; }
+a:hover { color: var(--vert-fonce); }
+
+ul { list-style: none; }
+
+/* --------------------------------------------------------------------------
+   2. CONTENEUR & GRILLE
+   -------------------------------------------------------------------------- */
+.conteneur {
+  max-width: var(--conteneur);
+  margin: 0 auto;
+  padding: 0 var(--espace);
+}
+
+.section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.section--fond-vert { background: var(--vert-fond); }
+.section--fond-blanc { background: var(--blanc); }
+
+.section-titre {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.section-titre .emoji {
+  font-size: 1.6rem;
+  background: var(--vert-fond);
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+}
+
+.section-sous-titre {
+  color: var(--gris);
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+/* ==========================================================================
+   3. EN-TÊTE / NAVIGATION
+   ========================================================================== */
+.site-header {
+  background: var(--vert-fonce);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--espace);
+  max-width: var(--conteneur);
+  margin: 0 auto;
+}
+
+/* Logo (nom du site avec icône) */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blanc);
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1.1;
+}
+
+.logo:hover { color: var(--jaune); }
+.logo .logo-icone {
+  width: 42px;
+  height: 42px;
+  background: var(--jaune);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  color: var(--vert-fonce);
+}
+.logo small { display: block; font-size: 0.68rem; font-weight: 700; color: var(--jaune); letter-spacing: 0.06em; }
+
+/* Liens de navigation principale */
+.nav-liens {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-liens a {
+  color: #E8F5EC;
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 8px 14px;
+  border-radius: 30px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-liens a:hover,
+.nav-liens a.actif { background: var(--jaune); color: var(--vert-fonce); }
+
+/* Bouton « burger » pour mobile */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  color: var(--blanc);
+  font-size: 1.2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  cursor: pointer;
+  place-items: center;
+}
+
+/* CTA du menu (newsletter) */
+.nav-cta {
+  background: var(--rouge);
+  color: var(--blanc) !important;
+}
+.nav-cta:hover { background: var(--rouge-fonce); }
+
+/* ==========================================================================
+   4. BOUTONS & BADGES
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 40px;
+  font-family: var(--titre);
+  font-weight: 700;
+  font-size: 0.98rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.btn-jaune { background: var(--jaune); color: var(--vert-fonce); }
+.btn-jaune:hover { background: var(--jaune-fonce); color: var(--vert-fonce); }
+
+.btn-rouge { background: var(--rouge); color: var(--blanc); }
+.btn-rouge:hover { background: var(--rouge-fonce); color: var(--blanc); }
+
+.btn-vert { background: var(--vert-clair); color: var(--blanc); }
+.btn-vert:hover { background: var(--vert-fonce); color: var(--blanc); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--vert-fonce);
+  border: 2px solid var(--vert-fonce);
+}
+.btn-ghost:hover { background: var(--vert-fonce); color: var(--blanc); }
+
+.btn:hover { transform: translateY(-2px); box-shadow: var(--ombre); }
+
+/* Badge budget (bande jaune du hero) */
+.badge-budget {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--jaune);
+  color: var(--vert-fonce);
+  font-family: var(--titre);
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 40px;
+  box-shadow: var(--ombre--forte);
+  font-size: 1rem;
+}
+
+/* Étiquette de prix d'une recette */
+.etiquette-prix {
+  display: inline-block;
+  background: var(--rouge);
+  color: var(--blanc);
+  font-family: var(--titre);
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 30px;
+}
+
+/* ==========================================================================
+   5. HERO (accueil)
+   ========================================================================== */
+.hero {
+  background: linear-gradient(135deg, var(--vert-fonce) 0%, var(--vert-clair) 100%);
+  color: var(--blanc);
+  padding: clamp(3rem, 8vw, 5.5rem) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .conteneur {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-titre {
+  color: var(--blanc);
+  margin-bottom: 14px;
+}
+.hero-titre span { color: var(--jaune); }
+
+.hero-sous-titre {
+  font-size: 1.12rem;
+  opacity: 0.92;
+  margin-bottom: 22px;
+  max-width: 520px;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 10px; }
+
+/* Illustration du hero (assiette) */
+.hero-image {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px dashed rgba(255, 255, 255, 0.35);
+  border-radius: 28px;
+  padding: 18px;
+}
+.hero-image img { border-radius: 20px; width: 100%; object-fit: cover; }
+
+/* Points forts sous le hero */
+.points-forts {
+  background: var(--blanc);
+  border-bottom: 1px solid #E6EEE8;
+}
+.points-forts .ligne {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  padding: 18px 0;
+}
+.point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--vert-fonce);
+  font-size: 0.95rem;
+  justify-content: center;
+}
+.point .point-emoji {
+  background: var(--vert-fond);
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 12px; font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   6. CARTES RECETTE
+   ========================================================================== */
+.grille-recettes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+.carte-recette {
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  overflow: hidden;
+  box-shadow: var(--ombre);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #EDF2EE;
+}
+.carte-recette:hover { transform: translateY(-5px); box-shadow: var(--ombre--forte); }
+
+.carte-recette .carte-image {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.carte-recette .carte-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.carte-recette:hover .carte-image img { transform: scale(1.05); }
+
+.carte-recette .etiquette-prix {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.carte-recette .carte-corps { padding: 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+.carte-recette h3 { font-size: 1.12rem; }
+.carte-recette h3 a { color: var(--vert-fonce); }
+.carte-recette h3 a:hover { color: var(--rouge); }
+
+.carte-infos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--gris);
+  font-weight: 700;
+}
+.carte-infos span { background: var(--vert-fond); padding: 4px 10px; border-radius: 20px; }
+
+.carte-recette .carte-extrait { color: var(--gris); font-size: 0.93rem; flex: 1; }
+
+.carte-lien {
+  margin-top: 8px;
+  font-family: var(--titre);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--rouge);
+}
+.carte-lien:hover { color: var(--rouge-fonce); }
+
+/* ==========================================================================
+   7. NEWSLETTER « Le Menu de la Semaine »
+   ========================================================================== */
+.newsletter {
+  background: var(--vert-fonce);
+  color: var(--blanc);
+  text-align: center;
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+}
+.newsletter h2 { color: var(--blanc); margin-bottom: 8px; }
+.newsletter .news-sous-titre { color: #D5E6DC; margin: 0 auto 26px; max-width: 520px; }
+
+.news-form {
+  max-width: 520px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  background: var(--blanc);
+  padding: 8px;
+  border-radius: 50px;
+  box-shadow: var(--ombre--forte);
+}
+.news-form input[type="email"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 11px 18px;
+  font-family: var(--texte);
+  font-size: 1rem;
+  border-radius: 40px;
+  color: var(--encre);
+  background: transparent;
+}
+.news-form .btn { white-space: nowrap; }
+
+.news-mention { font-size: 0.82rem; color: #A9C6B4; margin-top: 14px; }
+
+/* Confirmation message (succès / erreur) */
+.msg-form {
+  margin-top: 16px;
+  font-weight: 700;
+  border-radius: var(--rayon--petit);
+  padding: 12px 16px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.msg-form.succes { background: rgba(255, 195, 0, 0.15); color: var(--jaune); border: 1px solid var(--jaune); }
+.msg-form.erreur { background: rgba(230, 57, 70, 0.12); color: var(--rouge); border: 1px solid var(--rouge); }
+
+/* ==========================================================================
+   8. LISTE « 5 dîners » & étapes
+   ========================================================================== */
+.plan-etapes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin: 26px 0;
+  counter-reset: etape;
+}
+.scene {
+  background: var(--blanc);
+  border: 1px solid #EDF2EE;
+  border-radius: var(--rayon);
+  padding: 20px;
+  box-shadow: var(--ombre);
+  position: relative;
+}
+.scene .scene-num {
+  background: var(--jaune);
+  color: var(--vert-fonce);
+  font-family: var(--titre);
+  font-weight: 800;
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+.scene h3 { font-size: 1rem; margin-bottom: 6px; }
+.scene p { font-size: 0.88rem; color: var(--gris); }
+
+.liste-simple {
+  max-width: 640px;
+  margin: 0 auto 10px;
+}
+.liste-simple li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px dashed #D8E3DB;
+  font-weight: 700;
+}
+.liste-simple li .liste-emoji { font-size: 1.1rem; }
+.liste-simple li .liste-detail { color: var(--gris); font-weight: 600; font-size: 0.92rem; }
+
+.centre { text-align: center; }
+
+/* ==========================================================================
+   9. PAGES INTÉRIEURES (bandeau + contenu)
+   ========================================================================== */
+.bandeau-page {
+  background: linear-gradient(135deg, var(--vert-fonce), var(--vert-clair));
+  color: var(--blanc);
+  text-align: center;
+  padding: clamp(2.2rem, 5vw, 3.6rem) 0;
+}
+.bandeau-page h1 { color: var(--blanc); margin-bottom: 6px; }
+.bandeau-page p { color: #D5E6DC; max-width: 620px; margin: 0 auto; }
+
+.colonne-texte {
+  max-width: 760px;
+  margin: 0 auto;
+}
+.colonne-texte h2 { margin: 30px 0 12px; }
+.colonne-texte h3 { margin: 22px 0 8px; }
+.colonne-texte p, .colonne-texte li { margin-bottom: 12px; }
+.colonne-texte ul li { padding-left: 8px; }
+.colonne-texte blockquote {
+  border-left: 4px solid var(--jaune);
+  background: var(--vert-fond);
+  padding: 14px 18px;
+  border-radius: 0 var(--rayon--petit) var(--rayon--petit) 0;
+  margin: 18px 0;
+}
+.colonne-texte blockquote p { margin: 0; font-style: italic; }
+
+/* Encadré « budget » d'une recette */
+.encadre-budget {
+  background: var(--vert-fond);
+  border: 2px solid var(--vert-clair);
+  border-radius: var(--rayon);
+  padding: 18px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 26px;
+  margin: 20px 0;
+}
+.encadre-budget .champ { display: flex; flex-direction: column; gap: 2px; }
+.encadre-budget .champ small { font-weight: 700; color: var(--gris); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.05em; }
+.encadre-budget .champ strong { font-family: var(--titre); color: var(--vert-fonce); font-size: 1.05rem; }
+
+/* Liste ingrédients */
+.ingredients {
+  background: var(--blanc);
+  border: 1px solid #EDF2EE;
+  border-radius: var(--rayon);
+  padding: 22px;
+  box-shadow: var(--ombre);
+}
+.ingredients li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #DDE7DF;
+}
+.ingredients li:last-child { border-bottom: none; }
+.ingredients .ing-nom { font-weight: 600; }
+.ingredients .ing-quantite { color: var(--rouge); font-weight: 800; white-space: nowrap; }
+
+/* Étapes de préparation (numérotées) */
+.etapes { counter-reset: pas; margin: 18px 0; }
+.etapes .pas {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.etapes .pas-num {
+  flex: 0 0 42px;
+  height: 42px;
+  background: var(--vert-clair);
+  color: var(--blanc);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-family: var(--titre);
+  font-weight: 800;
+}
+.etapes .pas p { margin-bottom: 0; }
+
+/* Mots-clés d'une recette */
+.mots-cles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.mots-cles .mot-cle {
+  background: var(--vert-fond);
+  border: 1px solid #CEE3D4;
+  color: var(--vert-clair);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 30px;
+}
+
+/* Boutons de partage social */
+.partage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 22px 0;
+}
+.partage .partage-libelle {
+  font-family: var(--titre);
+  font-weight: 700;
+  color: var(--vert-fonce);
+  margin-right: 4px;
+}
+.btn-partage {
+  border: none;
+  cursor: pointer;
+  font-family: var(--titre);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 9px 16px;
+  border-radius: 30px;
+  color: var(--blanc);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: transform 0.15s, opacity 0.15s;
+}
+.btn-partage:hover { transform: translateY(-2px); opacity: 0.92; }
+.btn-partage.copier { background: var(--vert-clair); }
+.btn-partage.whatsapp { background: #25D366; }
+.btn-partage.instagram {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+}
+
+/* Emplacements publicitaires / affiliation (réservés) */
+.slot-bloc {
+  margin: 26px 0;
+  border-radius: var(--rayon);
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #CBD9CE;
+  background: var(--vert-tres-fond);
+  color: #9DB4A2;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 14px;
+}
+
+/* ==========================================================================
+   10. FORMULAIRES (contact & newsletter)
+   ========================================================================== */
+.form-carte {
+  background: var(--blanc);
+  border-radius: var(--rayon);
+  box-shadow: var(--ombre);
+  padding: 26px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.form-groupe { margin-bottom: 18px; }
+.form-groupe label {
+  display: block;
+  font-family: var(--titre);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--vert-fonce);
+  margin-bottom: 6px;
+}
+.form-groupe input,
+.form-groupe textarea {
+  width: 100%;
+  border: 2px solid #DCE6DF;
+  border-radius: var(--rayon--petit);
+  padding: 12px 14px;
+  font-family: var(--texte);
+  font-size: 1rem;
+  color: var(--encre);
+  background: var(--vert-tres-fond);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-groupe input:focus,
+.form-groupe textarea:focus { border-color: var(--vert-clair); background: var(--blanc); }
+.form-groupe textarea { resize: vertical; min-height: 130px; }
+
+/* ==========================================================================
+   11. FOOTER
+   ========================================================================== */
+.site-footer {
+  background: var(--vert-fonce);
+  color: #CFE0D5;
+  padding: 40px 0 0;
+  margin-top: 40px;
+}
+.footer-grille {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+.footer-grille h4 {
+  color: var(--jaune);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+.footer-grille a { color: #CFE0D5; font-weight: 600; font-size: 0.95rem; }
+.footer-grille a:hover { color: var(--jaune); }
+.footer-grille li { margin-bottom: 8px; }
+.footer-description { font-size: 0.92rem; max-width: 300px; margin-top: 10px; }
+
+.footer-bas {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 18px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.footer-bas .footer-coeur { color: var(--rouge); }
+
+/* ==========================================================================
+   12. RESPONSIVE
+   ========================================================================== */
+@media (max-width: 860px) {
+  .hero .conteneur { grid-template-columns: 1fr; }
+  .hero-image { order: -1; max-width: 420px; margin: 0 auto; }
+  .footer-grille { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  /* Navigation mobile : menu caché derrière le burger */
+  .nav-toggle { display: grid; }
+  .nav-liens {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--vert-fonce);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+  .nav-liens.ouvert { max-height: 420px; padding: 14px 20px 20px; }
+  .nav-liens a { padding: 12px 14px; }
+
+  .news-form { flex-direction: column; gap: 8px; }
+  .news-form .btn { justify-content: center; }
+
+  .grille-recettes { grid-template-columns: 1fr; }
+  .footer-grille { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+}
+
+/* Impression : seule la fiche recette s'imprime proprement */
+@media print {
+  .site-header, .site-footer, .partage, .slot-bloc,
+  .btn-imprimer, .bandeau-actions, .newsletter { display: none !important; }
+  body { background: #fff; }
+  .colonne-texte { max-width: 100%; }
+  .encadre-budget { break-inside: avoid; }
+  .etapes .pas { break-inside: avoid; }
+}

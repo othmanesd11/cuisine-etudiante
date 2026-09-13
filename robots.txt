@@ -1,0 +1,15 @@
+# ==========================================================================
+# CUISINE ÉTUDIANT — robots.txt
+# --------------------------------------------------------------------------
+# Autorise tous les robots d'indexation et pointe vers le sitemap.
+# ⚠️ Remplace le domaine par le tien (identique à sitemap.xml).
+# ==========================================================================
+
+User-agent: *
+Allow: /
+
+# Interdire aux moteurs de découvrir les pages d'administration éventuelles
+Disallow: /api/
+
+# Emplacement du plan du site
+Sitemap: https://cuisine-etudiant.vercel.app/sitemap.xml

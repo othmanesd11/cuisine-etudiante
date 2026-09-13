@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ======================== SEO / TITRE ======================== -->
+  <title>Catégories — Explorer les recettes par type | Cuisine Étudiant</title>
+  <meta name="description" content="Retrouve nos recettes étudiantes par catégorie : plats rapides, petit-déjeuner, anti-gaspi, repas complet. Toujours à moins de 30 DH par personne." />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ============================ EN-TÊTE ============================ -->
+  <header class="site-header" role="banner">
+    <nav class="nav-bar" aria-label="Navigation principale">
+      <a href="index.html" class="logo" aria-label="Cuisine Étudiant – Accueil">
+        <span class="logo-icone">🍳</span>
+        <span>
+          Cuisine Étudiant
+          <small>Recettes étudiantes au Maroc</small>
+        </span>
+      </a>
+      <ul class="nav-liens" id="nav-liens">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="categories.html" class="actif">Catégories</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Bandeau de la page -->
+    <section class="bandeau-page">
+      <div class="conteneur">
+        <h1>Catégories</h1>
+        <p>Navigue par type de recette, tout reste à moins de 30 DH.</p>
+      </div>
+    </section>
+
+    <!-- Catégories -->
+    <section class="section">
+      <div class="conteneur">
+
+        <div class="grille-recettes">
+
+          <!-- Catégorie : Repas rapides -->
+          <article class="carte-recette">
+            <div class="carte-image">
+              <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80"
+                   alt="Repas rapides prêts en 20 minutes" width="600" height="375" loading="lazy" />
+              <span class="etiquette-prix">≤ 20 min</span>
+            </div>
+            <div class="carte-corps">
+              <h3>🍳 Repas rapides</h3>
+              <p class="carte-extrait">Prêts en 20 minutes maximum, pour les soirs chargés.</p>
+              <a href="recettes/omelette-vide-frigo.html" class="carte-lien">Voir la sélection →</a>
+            </div>
+          </article>
+
+          <!-- Catégorie : Petit-déjeuner -->
+          <article class="carte-recette">
+            <div class="carte-image">
+              <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80"
+                   alt="Petit-déjeuner healthy" width="600" height="375" loading="lazy" />
+              <span class="etiquette-prix">≤ 15 DH</span>
+            </div>
+            <div class="carte-corps">
+              <h3>🥞 Petit-déjeuner</h3>
+              <p class="carte-extrait">Bien commencer la journée sans se ruiner ni mettre 1h.</p>
+              <a href="recettes/pancakes-banane-avoine.html" class="carte-lien">Voir la sélection →</a>
+            </div>
+          </article>
+
+          <!-- Catégorie : Anti-gaspi -->
+          <article class="carte-recette">
+            <div class="carte-image">
+              <img src="https://images.unsplash.com/photo-1518569656558-1f25e69d93d7?auto=format&fit=crop&w=600&q=80"
+                   alt="Légumes du marché anti-gaspi" width="600" height="375" loading="lazy" />
+              <span class="etiquette-prix">Économique</span>
+            </div>
+            <div class="carte-corps">
+              <h3>♻️ Anti-gaspi</h3>
+              <p class="carte-extrait">Cuisine les restes et rends ton frigo content.</p>
+              <a href="recettes/omelette-vide-frigo.html" class="carte-lien">Voir la sélection →</a>
+            </div>
+          </article>
+
+          <!-- Catégorie : Repas complet -->
+          <article class="carte-recette">
+            <div class="carte-image">
+              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80"
+                   alt="Bowl complet avec légumes" width="600" height="375" loading="lazy" />
+              <span class="etiquette-prix">Équilibré</span>
+            </div>
+            <div class="carte-corps">
+              <h3>🥗 Repas complet</h3>
+              <p class="carte-extrait">Protéines, légumes et céréales dans une même assiette.</p>
+              <a href="recettes/bowl-couscous-pois-chiches.html" class="carte-lien">Voir la sélection →</a>
+            </div>
+          </article>
+
+        </div><!-- /grille-recettes -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="conteneur">
+      <div class="footer-grille">
+        <div>
+          <h4>🍳 Cuisine Étudiant</h4>
+          <p class="footer-description">Le blog de recettes pour les étudiants marocains qui veulent manger bien, pas cher, et sans passer 2 heures en cuisine.</p>
+        </div>
+        <div>
+          <h4>Explorer</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="categories.html">Catégories</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Informations</h4>
+          <ul>
+            <li><a href="politique-de-confidentialite.html">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bas">
+        <p>Fait avec <span class="footer-coeur">❤️</span> au Maroc · Prix en Dirhams (DH) · Cuisine Étudiant</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

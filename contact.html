@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ======================== SEO / TITRE ======================== -->
+  <title>Contact — Écris-nous | Cuisine Étudiant</title>
+  <meta name="description" content="Tu as une question, une suggestion de recette ou une envie de collaborer ? Contacte Cuisine Étudiant. Réponse rapide garantie." />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ============================ EN-TÊTE ============================ -->
+  <header class="site-header" role="banner">
+    <nav class="nav-bar" aria-label="Navigation principale">
+      <a href="index.html" class="logo" aria-label="Cuisine Étudiant – Accueil">
+        <span class="logo-icone">🍳</span>
+        <span>
+          Cuisine Étudiant
+          <small>Recettes étudiantes au Maroc</small>
+        </span>
+      </a>
+      <ul class="nav-liens" id="nav-liens">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="categories.html">Catégories</a></li>
+        <li><a href="contact.html" class="actif">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Bandeau de la page -->
+    <section class="bandeau-page">
+      <div class="conteneur">
+        <h1>Contact</h1>
+        <p>Une question, une idée de recette, un partenariat ? Parle-moi, tu auras une réponse rapide.</p>
+      </div>
+    </section>
+
+    <!-- Formulaire de contact -->
+    <section class="section">
+      <div class="conteneur">
+
+        <div class="form-carte">
+          <form id="contact-form" action="#" method="POST">
+            <div class="form-groupe">
+              <label for="contact-nom">Ton nom</label>
+              <input type="text" id="contact-nom" name="nom" placeholder="Ex. Yassine" required />
+            </div>
+            <div class="form-groupe">
+              <label for="contact-email">Ton email</label>
+              <input type="email" id="contact-email" name="email" placeholder="toi@exemple.com" required />
+            </div>
+            <div class="form-groupe">
+              <label for="contact-texte">Ton message</label>
+              <textarea id="contact-texte" name="message" placeholder="Écris ici ta question ou ta suggestion de recette…" required></textarea>
+            </div>
+
+            <!-- Barre anti-spam simple (champ caché, à remplir par un bot) -->
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <button type="submit" class="btn btn-jaune">Envoyer le message</button>
+            <div id="contact-message" class="msg-form" role="alert" aria-live="polite" style="display:none"></div>
+          </form>
+        </div>
+
+        <div class="centre" style="margin-top:30px">
+          <p>Tu préfères le direct ? Écris sur <a href="https://wa.me/212600000000">WhatsApp</a>, suis-nous sur <a href="https://www.instagram.com/">Instagram</a>, ou envoie-nous un email : <a href="mailto:cuisine.etudiante.feg@gmail.com">cuisine.etudiante.feg@gmail.com</a>.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="conteneur">
+      <div class="footer-grille">
+        <div>
+          <h4>🍳 Cuisine Étudiant</h4>
+          <p class="footer-description">Le blog de recettes pour les étudiants marocains qui veulent manger bien, pas cher, et sans passer 2 heures en cuisine.</p>
+        </div>
+        <div>
+          <h4>Explorer</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="categories.html">Catégories</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Informations</h4>
+          <ul>
+            <li><a href="politique-de-confidentialite.html">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bas">
+        <p>Fait avec <span class="footer-coeur">❤️</span> au Maroc · Prix en Dirhams (DH) · Cuisine Étudiant</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
