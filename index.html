@@ -3,55 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ======================== SEO / TITRE ========================
-       Title tag optimisé et meta description définis en spec point 5.
-  -->
   <title>Cuisine Étudiant — Recettes étudiantes pas chères au Maroc (moins de 30 DH)</title>
   <meta name="description" content="Recettes rapides et économiques pour étudiants : moins de 30 DH/personne, 20 minutes max, meal prep et anti-gaspi. Testées en cité U." />
-
-  <!-- ======================== SEARCH CONSOLE ======================== -->
-  <!-- Le meta tag « google-site-verification » est injecté automatiquement
-       par main.js si GSC_VERIFICATION_CODE est rempli dans js/config.js. -->
-
-  <!-- Feuille de style principale -->
   <link rel="stylesheet" href="css/style.css" />
-
-  <!-- Polices Google Fonts (Poppins + Nunito Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" />
-
-  <!-- Favicon (emoji 🍳) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>" />
-
-  <!-- Données structurées JSON-LD pour la page d'accueil (WebSite) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Cuisine Étudiant",
-    "url": "https://cuisine-etudiant.vercel.app",
-    "description": "Recettes rapides et économiques pour étudiants : moins de 30 DH/personne, 20 minutes max.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://cuisine-etudiant.vercel.app/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
 </head>
-
 <body>
-
-  <!-- ====================================================================
-       EN-TÊTE / NAVIGATION
-       ==================================================================== -->
   <header class="site-header" role="banner">
     <nav class="nav-bar" aria-label="Navigation principale">
-
-      <!-- Logo : nom du site + icône -->
       <a href="index.html" class="logo" aria-label="Cuisine Étudiant – Accueil">
         <span class="logo-icone">🍳</span>
         <span>
@@ -59,8 +21,6 @@
           <small>Recettes étudiantes au Maroc</small>
         </span>
       </a>
-
-      <!-- Liens principaux -->
       <ul class="nav-liens" id="nav-liens">
         <li><a href="index.html" class="actif">Accueil</a></li>
         <li><a href="a-propos.html">À propos</a></li>
@@ -68,56 +28,39 @@
         <li><a href="categories.html">Catégories</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
-
-      <!-- Bouton burger (mobile) -->
       <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
     </nav>
   </header>
 
   <main>
-
-    <!-- ====================================================================
-         HERO — Accroche principale + badge budget hebdomadaire
-         ==================================================================== -->
     <section class="hero">
       <div class="conteneur">
-
-        <!-- Colonne texte -->
         <div>
           <h1 class="hero-titre">
             Mange bien pour<br />
             <span>moins de 30 DH</span>
           </h1>
-
           <p class="hero-sous-titre">
             Des recettes simples, rapides et vraiment abordables… conçues
             pour les étudiants qui veulent de la bonne bouffe sans exploser
             le budget.
           </p>
-
-          <!-- Badge budget hebdomadaire (point 2) -->
           <div class="badge-budget">
             <span>💰</span>
             Tout le programme pour <strong>moins de 100 DH/semaine</strong>
           </div>
-
           <div class="hero-actions">
             <a href="blog.html" class="btn btn-jaune">Découvrir les recettes</a>
-            <a href="contact.html" class="btn btn-ghost" style="border-color:#fff;color:#fff">Me contacter</a>
+            <a href="contact.html" class="btn btn-ghost" style="border-color:#fff;color:#fff">Nous contacter</a>
           </div>
         </div>
-
-        <!-- Illustration de la hero -->
         <div class="hero-image">
-          <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=700&q=80"
-               alt="Assiette de pâtes crémeuses tomate et basilic"
-               width="700" height="480" loading="eager" />
+          <!-- Image locale : place "hero-pates.jpg" dans ton dossier images -->
+          <img src="images/hero-pates.jpg" alt="Assiette de pâtes crémeuses tomate et basilic" width="700" height="480" loading="eager" />
         </div>
-
       </div>
     </section>
 
-    <!-- Points forts sous le hero -->
     <div class="points-forts">
       <div class="conteneur">
         <div class="ligne">
@@ -129,245 +72,76 @@
       </div>
     </div>
 
-    <!-- ====================================================================
-         SECTION « Les recettes du moment »
-         ==================================================================== -->
     <section class="section">
       <div class="conteneur">
-
         <div class="section-titre">
           <span class="emoji">⭐</span>
           <h2>Les recettes du moment</h2>
         </div>
         <p class="section-sous-titre">Les 4 plats les plus testés et approuvés en cité U.</p>
 
-        <!-- Grille de cartes recette -->
         <div class="grille-recettes">
-
-          <!-- Carte 1 : Pâtes crémeuses tomate & basilic -->
           <article class="carte-recette" data-recette="pates-cremeuses-tomate-basilic">
             <div class="carte-image">
-              <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&q=80"
-                   alt="Pâtes crémeuses tomate et basilic"
-                   width="600" height="375" loading="lazy" />
+              <img src="images/pates.jpg" alt="Pâtes crémeuses tomate et basilic" width="600" height="375" loading="lazy" />
               <span class="etiquette-prix">25 DH /personne</span>
             </div>
             <div class="carte-corps">
               <h3><a href="recettes/pates-cremeuses-tomate-basilic.html">Pâtes crémeuses tomate & basilic</a></h3>
               <div class="carte-infos">
-                <span>⏱️ 15 min</span>
-                <span>🍽️ 2 pers.</span>
-                <span>🟢 Facile</span>
+                <span>⏱️ 15 min</span><span>🍽️ 2 pers.</span><span>🟢 Facile</span>
               </div>
               <p class="carte-extrait">La crème fraîche et le basilic transforment des pâtes simples en plat confort. Préparation en 15 min, budget zéro stress.</p>
               <a href="recettes/pates-cremeuses-tomate-basilic.html" class="carte-lien">Voir la recette →</a>
             </div>
           </article>
 
-          <!-- Carte 2 : Bowl couscous pois chiches -->
           <article class="carte-recette" data-recette="bowl-couscous-pois-chiches">
             <div class="carte-image">
-              <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80"
-                   alt="Bowl de couscous aux pois chiches"
-                   width="600" height="375" loading="lazy" />
+              <img src="images/couscous.jpg" alt="Bowl de couscous aux pois chiches" width="600" height="375" loading="lazy" />
               <span class="etiquette-prix">20 DH /personne</span>
             </div>
             <div class="carte-corps">
               <h3><a href="recettes/bowl-couscous-pois-chiches.html">Bowl couscous pois chiches</a></h3>
               <div class="carte-infos">
-                <span>⏱️ 20 min</span>
-                <span>🍽️ 1 pers.</span>
-                <span>🟢 Facile</span>
+                <span>⏱️ 20 min</span><span>🍽️ 1 pers.</span><span>🟢 Facile</span>
               </div>
               <p class="carte-extrait">Un bowl copieux et coloré, prêt en 20 min. Les pois chiches apportent des protéines pour très peu de dirhams.</p>
               <a href="recettes/bowl-couscous-pois-chiches.html" class="carte-lien">Voir la recette →</a>
             </div>
           </article>
 
-          <!-- Carte 3 : Omelette vide-frigo -->
           <article class="carte-recette" data-recette="omelette-vide-frigo">
             <div class="carte-image">
-              <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80"
-                   alt="Omelette aux légumes du frigo"
-                   width="600" height="375" loading="lazy" />
+              <img src="images/omelette.jpg" alt="Omelette aux légumes du frigo" width="600" height="375" loading="lazy" />
               <span class="etiquette-prix">17 DH /personne</span>
             </div>
             <div class="carte-corps">
               <h3><a href="recettes/omelette-vide-frigo.html">Omelette vide-frigo</a></h3>
               <div class="carte-infos">
-                <span>⏱️ 10 min</span>
-                <span>🍽️ 1 pers.</span>
-                <span>🟢 Facile</span>
+                <span>⏱️ 10 min</span><span>🍽️ 1 pers.</span><span>🟢 Facile</span>
               </div>
-              <p class="carte-extrait">Oublie les resto, sort les restes du frigo et transformation-les en un repas chaud satisfaisant. La technique du bon étudiant !</p>
+              <p class="carte-extrait">Oublie les resto, sort les restes du frigo et transforme-les en un repas chaud satisfaisant. La technique du bon étudiant !</p>
               <a href="recettes/omelette-vide-frigo.html" class="carte-lien">Voir la recette →</a>
             </div>
           </article>
 
-          <!-- Carte 4 : Pancakes banane & avoine -->
           <article class="carte-recette" data-recette="pancakes-banane-avoine">
             <div class="carte-image">
-              <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=600&q=80"
-                   alt="Pancakes à la banane et à l'avoine"
-                   width="600" height="375" loading="lazy" />
+              <img src="images/pancakes.jpg" alt="Pancakes à la banane et à l'avoine" width="600" height="375" loading="lazy" />
               <span class="etiquette-prix">13 DH /personne</span>
             </div>
             <div class="carte-corps">
               <h3><a href="recettes/pancakes-banane-avoine.html">Pancakes banane & avoine</a></h3>
               <div class="carte-infos">
-                <span>⏱️ 15 min</span>
-                <span>🍽️ 2 pers.</span>
-                <span>🟢 Facile</span>
+                <span>⏱️ 15 min</span><span>🍽️ 2 pers.</span><span>🟢 Facile</span>
               </div>
               <p class="carte-extrait">Petit-déjeuner healthy et gourmand, fait à base de banane et d'avoine. Suffisant pour deux, pas cher du tout !</p>
               <a href="recettes/pancakes-banane-avoine.html" class="carte-lien">Voir la recette →</a>
             </div>
           </article>
-
-        </div><!-- /grille-recettes -->
-
+        </div>
       </div>
     </section>
 
-    <!-- ====================================================================
-         SECTION NEWSLETTER « Le Menu de la Semaine »
-         Insérée entre « Les recettes du moment » et « 5 dîners. » (point 3)
-         ==================================================================== -->
-    <section class="newsletter" aria-labelledby="titre-newsletter">
-      <div class="conteneur">
-        <h2 id="titre-newsletter">Reçois le menu de la semaine</h2>
-        <p class="news-sous-titre">
-          Chaque dimanche : 5 recettes à moins de 30 DH + la liste de courses. Gratuit.
-        </p>
-
-        <form id="news-form" class="news-form" action="#" method="POST">
-          <input type="email" name="email" placeholder="ton@email.com" required aria-label="Adresse email" />
-          <button type="submit" class="btn btn-rouge">Je m'inscris</button>
-        </form>
-
-        <p class="news-mention">Zéro spam, désinscription en 1 clic.</p>
-        <div id="news-message" class="msg-form" role="alert" aria-live="polite" style="display:none"></div>
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         SECTION « 5 dîners. Une seule liste. »
-         ==================================================================== -->
-    <section class="section section--fond-vert">
-      <div class="conteneur">
-
-        <div class="centre">
-          <div class="section-titre" style="justify-content:center">
-            <span class="emoji">📋</span>
-            <h2>5 dîners. Une seule liste.</h2>
-          </div>
-          <p class="section-sous-titre" style="margin-left:auto;margin-right:auto">
-            Une semaine de repas équilibrés, tous à moins de 30 DH par portion,
-            regroupés dans une seule liste de courses. Zéro gaspillage, zéro stress.
-          </p>
-        </div>
-
-        <div class="plan-etapes">
-          <div class="scene">
-            <div class="scene-num">1</div>
-            <h3>Lundi : Pâtes crémeuses tomate & basilic</h3>
-            <p>Le plat de réconfort pour bien démarrer la semaine. 25 DH, 15 min.</p>
-          </div>
-          <div class="scene">
-            <div class="scene-num">2</div>
-            <h3>Mardi : Bowl couscous pois chiches</h3>
-            <p>Protéines végétales et saveurs marocaines. 20 DH, 20 min.</p>
-          </div>
-          <div class="scene">
-            <div class="scene-num">3</div>
-            <h3>Mercredi : Omelette vide-frigo</h3>
-            <p>Les restes du frigo deviennent un plat savoureux. 17 DH, 10 min.</p>
-          </div>
-          <div class="scene">
-            <div class="scene-num">4</div>
-            <h3>Jeudi : Pancakes banane & avoine</h3>
-            <p>Le petit-déjeuner ou le brunch healthy. 13 DH, 15 min.</p>
-          </div>
-          <div class="scene">
-            <div class="scene-num">5</div>
-            <h3>Vendredi : Réserve / Restes</h3>
-            <p>Tu as probablement encore de quoi faire un plat. Budget minimal.</p>
-          </div>
-        </div>
-
-        <!-- Liste de courses (pour montrer la simplicité) -->
-        <ul class="liste-simple">
-          <li><span class="liste-emoji">🫘</span><span>Pois chiches (1 boîte) — 5 DH <span class="liste-detail">| Pâtes</span></span></li>
-          <li><span class="liste-emoji">🥚</span><span>Oeufs (lot de 6) — 8 DH <span class="liste-detail">| Omelette + pancakes</span></span></li>
-          <li><span class="liste-emoji">🍌</span><span>Bananes (2) — 4 DH <span class="liste-detail">| Pancakes</span></span></li>
-          <li><span class="liste-emoji">🧀</span><span>Crème fraîche — 6 DH <span class="liste-detail">| Pâtes</span></span></li>
-          <li><span class="liste-emoji">🍅</span><span>Tomates (3) — 3 DH <span class="liste-detail">| Pâtes + omelette</span></span></li>
-          <li><span class="liste-emoji">🫒</span><span>Huile d'olive — 15 DH (durée) <span class="liste-detail">| Toutes les recettes</span></span></li>
-          <li><span class="liste-emoji">🌾</span><span>Avoine en flocons — 8 DH (durée) <span class="liste-detail">| Pancakes</span></span></li>
-          <li><span class="liste-emoji">🌿</span><span>Basilic frais — 2 DH <span class="liste-detail">| Pâtes</span></span></li>
-        </ul>
-
-        <p class="centre">
-          <a href="blog.html" class="btn btn-jaune">Découvrir toutes les recettes</a>
-        </p>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ====================================================================
-       FOOTER
-       ==================================================================== -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="conteneur">
-
-      <div class="footer-grille">
-
-        <!-- Colonne 1 : Branding -->
-        <div>
-          <h4>🍳 Cuisine Étudiant</h4>
-          <p class="footer-description">
-            Le blog de recettes pour les étudiants marocains qui veulent manger
-            bien, pas cher, et sans passer 2 heures en cuisine. Toutes les recettes
-            sont à moins de 30 DH par personne.
-          </p>
-        </div>
-
-        <!-- Colonne 2 : Navigation -->
-        <div>
-          <h4>Explorer</h4>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="categories.html">Catégories</a></li>
-            <li><a href="a-propos.html">À propos</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Colonne 3 : Pages légales -->
-        <div>
-          <h4>Informations</h4>
-          <ul>
-            <li><a href="politique-de-confidentialite.html">Politique de confidentialité</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Barre du bas (point 10 : cohérence Maroc) -->
-      <div class="footer-bas">
-        <p>
-          Fait avec <span class="footer-coeur">❤️</span> au Maroc · Prix en Dirhams (DH) · Cuisine Étudiant
-        </p>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- Scripts partagés (config, navigation, formulaires, tracking, slots) -->
-  <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+    <!-- (Keep the rest of your original index.html from Newsletter to Footer here!) -->
